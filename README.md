@@ -5,7 +5,7 @@ For a guided approach, follow the tutorial by Alex The Analyst, you canf find th
 
 ## Operations Performed
 
-1.**Standardize the Sale Date column**:  In this given dataset, we have the time attached to the Date column which virtually is of no use, so we convert it to the standardized Date format and alter the table by adding a SaleDateConverted Column.
+1. **Standardize the Sale Date column**:  In this given dataset, we have the time attached to the Date column which virtually is of no use, so we convert it to the standardized Date format and alter the table by adding a SaleDateConverted Column.
 
 
 2. **Solving NULL Property Address** problem: In this dataset, we have a lot of NULL values under the column Property Address and it is ideal to remove NULL values in a dataset to make it more usable. If you scroll through the data, you'll find that the same ParcelIDs have missing Address Values, which essentially means we can have it filled by using the Address that already exists for that ParcelID. To do this, we perform a self join where the ParcelIDs are equal and UniqueIDs aren't, we can then update the missing values by using ISNULL() function and fill the values (as we have performed self-joined we have two "tables" to get values from). This solves the NULL value problems.
@@ -20,5 +20,5 @@ For a guided approach, follow the tutorial by Alex The Analyst, you canf find th
 5. **Remove Duplicates**: We have a lot of repeated values in the dataset and it is ideal to not have those, so we remove them by using  a CTE. e essentially PARTITION the table in terms of a few columns and index these rows using ROW_NUMBER, we then fish out the rows that appear more than once and delete them.
 
 
-6.**Deleting Useless Columns**:  We delete the columns that we have modified earlier in earlier steps and only keep the ones we've updated to optimize the dataset.
+6. **Deleting Useless Columns**:  We delete the columns that we have modified earlier in earlier steps and only keep the ones we've updated to optimize the dataset.
 
